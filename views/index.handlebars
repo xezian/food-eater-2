@@ -1,0 +1,58 @@
+<div class="supermarket"></div>
+<div class="container justify-content-center">
+    <h4 class="text-center food-eater-header">FOOD EATER</h4>
+    <div class="container">
+        <div class="row" id="foods">
+            <div class="col-sm-6 text-center">
+                <label for="uneaten" class="column-header">UNEATEN FOOD:</label>
+                <div id="uneaten">
+                    <ul>
+                        {{#each foods}}
+                            {{#unless eaten}}
+                                <button type="button" class="btn eat" id="{{this.id}}">
+                                <p>Food: {{this.food_name}}</p>
+                                    <h4>
+                                        <span class="glyphicon glyphicon-ice-lolly"></span> ---> Eat it! ---> 
+                                        <span class="glyphicon glyphicon-ice-lolly"></span>
+                                    </h4>
+                                </button>
+                            {{/unless}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-6 text-center">
+                <label for="eaten" class="column-header">EATEN FOOD:</label>
+                <div id="eaten">
+                    <ul>
+                        {{#each foods}}
+                            {{#if eaten}}
+                                <button type="button" class="btn eaten" data-id="{{this.id}}">
+                                    <p>Food: {{this.food_name}}</p>
+                                    <h4>
+                                        <span class="glyphicon glyphicon-ice-lolly-tasted"></span> *** Ate it! *** 
+                                        <span class="glyphicon glyphicon-ice-lolly-tasted"></span>
+                                    </h4>
+                                </button>
+                            {{/if}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <label for="new-food" class="column-header">NEW FOOD:</label>
+            <div class="row">
+                <input type="text" class="new-food-field" id="new-food">
+            </div>
+        </div>
+        <div class="row text-center">
+            <button type="button" class="btn btn-lg new-food-button" id="submit">
+                <h4>
+                    <span class="glyphicon glyphicon-hand-right"></span> ---> Click to Submit! <--- 
+                    <span class="glyphicon glyphicon-hand-left"></span>
+                </h4>
+            </button>
+        </div>
+    </div>
+</div>

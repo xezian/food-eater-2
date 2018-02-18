@@ -1,0 +1,52 @@
+body {
+    background-image: url("/assets/images/Foods.jpg");
+    background-size: 300px;
+    background-repeat: repeat;
+    background-position: center 
+}
+.supermarket {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: 10vh;
+    width: 88vw;
+    height: 80vh;
+    background-image: url("/assets/images/supermarket.jpg");
+    border-radius: 10px;
+    opacity: .7;
+    z-index: -1;
+}
+.food-eater-header {
+    font-size: 13vw;
+    color: #ecffb4;
+}
+.column-header {
+    font-size: 56px;
+    color:#ffb4ff;
+}
+.eat {
+    margin: 2px;
+    color: #630303;
+    background-color: #c7ffb4
+}
+.eaten {
+    margin: 2px;
+    color: #ecffb4;
+    background-color: #5f0571;
+}
+.new-food-field {
+    width: 290px;
+    height: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #ecffb4ce; 
+}
+.new-food-button {
+    margin: 2px;
+    color: #052771;
+    background-color: #ffb4ff;
+    margin-bottom: 20px;
+}
