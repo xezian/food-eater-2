@@ -1,26 +1,27 @@
 {
-  "name": "food-eater",
+  "name": "food-eater-2",
   "version": "1.0.0",
-  "description": "an eater for food",
+  "description": "the sql to food-eater. another eater for food",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xezian/food-eater.git"
+    "url": "git+https://github.com/xezian/food-eater-2.git"
   },
   "author": "Jason A. Leo",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/xezian/food-eater/issues"
+    "url": "https://github.com/xezian/food-eater-2/issues"
   },
-  "homepage": "https://github.com/xezian/food-eater#readme",
+  "homepage": "https://github.com/xezian/food-eater-2#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "express-handlebars": "^3.0.0",
-    "method-override": "^2.3.10",
-    "mysql": "^2.15.0"
+    "mysql": "^2.15.0",
+    "mysql2": "^1.5.2",
+    "sequelize": "^4.33.4"
   }
 }

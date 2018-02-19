@@ -1,30 +1,35 @@
-const foodEater = require("../models/food_eater.js");
+const foodEater = require("../models");
 const express = require("express");
 const router = express.Router();
 // get route for getting all foods
 router.get("/", (req, res) => {
-    foodEater.all("foods", function(data){
+    foodEater.Food.findAll({}).then(function(foods){
         const allFoods = {
-            foods: data,
+            foods: foods,
         }
-        res.render("index", allFoods);
+        res.render("index", allFoods)
     })
 });
 // post route for adding new foods
 router.post("/api/foods", (req, res) => {
-    foodEater.create(req.body.food_name, "foods", function(data){
-        res.json({ id: data.insertId });
-    });
+    foodEater.Food.create({
+        food_name: req.body.food_name,
+        eaten: false
+    }).then(function(foods){
+        res.json(foods)
+    })
 });
 // put route for eating foods
 router.put("/api/foods/:id", (req, res) => {
     const idToEat = req.params.id;
-    foodEater.eat(idToEat, "foods", function(data){
-        if (data.changedRows == 0){
-            return res.status(404).end();
-        } else {
-            res.status(200).end();
+    foodEater.Food.update({
+        eaten: true,
+    }, {
+        where: {
+            id: req.params.id
         }
-    });   
+    }).then(function(foods){
+        res.json(foods)
+    })
 });
 module.exports = router;

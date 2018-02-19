@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3000;
 
 const app = express();
-
+const models = require("./models");
 // allow express access to the public directory for static css and image files
 app.use(express.static("public"));
 
@@ -25,6 +25,8 @@ const routes = require("./controllers/food_eater_controller.js");
 
 app.use(routes);
 
-app.listen(PORT, function() {
-  console.log("App now listening at http://localhost:" + PORT);
+models.sequelize.sync().then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });
