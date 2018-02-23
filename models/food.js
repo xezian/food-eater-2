@@ -1,24 +1,15 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Food = sequelize.define('Food', {
-      food_name: {
-          type: DataTypes.STRING,
-          allowNull: false,
-          validate: {
-              len: {
-                  args: [1, 140],
-                  msg: "not a good length dude"
-              }
-          },
-      },
-      eaten: {
-          type: DataTypes.BOOLEAN,
-          allowNull: false,
-          defaultValue: false,
-      },
-  });
+  var Food = sequelize.define('Food', {
+    food_name: DataTypes.STRING,
+    eaten: DataTypes.BOOLEAN,
+  }, {});
   Food.associate = function(models) {
-    // associations can be defined here
+    Food.belongsTo(models.Cook, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
   };
   return Food;
 };

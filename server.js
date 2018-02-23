@@ -25,7 +25,7 @@ const routes = require("./controllers/food_eater_controller.js");
 
 app.use(routes);
 
-models.sequelize.sync().then(function() {
+models.sequelize.sync({}).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });

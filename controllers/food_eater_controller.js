@@ -10,11 +10,19 @@ router.get("/", (req, res) => {
         res.render("index", allFoods)
     })
 });
+// post route for adding new cook
+router.post("/api/cooks", (req, res) => {
+    foodEater.Cook.create({
+        cook_name: req.body.cook_name,
+        include: [foodEater.Food]
+    })
+})
 // post route for adding new foods
 router.post("/api/foods", (req, res) => {
     foodEater.Food.create({
         food_name: req.body.food_name,
-        eaten: false
+        eaten: false,
+        include: [foodEater.Cook]
     }).then(function(foods){
         res.json(foods)
     })
@@ -26,7 +34,15 @@ router.put("/api/foods/:id", (req, res) => {
         eaten: true,
     }, {
         where: {
-            id: req.params.id
+            id: req.params.id,
+            eaten: false
+        }
+    }, {
+        eaten: false,
+    },{
+        where: {
+            id: req.params.id,
+            eaten: true
         }
     }).then(function(foods){
         res.json(foods)

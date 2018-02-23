@@ -1,20 +1,15 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Food', {
+    return queryInterface.createTable('Cooks', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      food_name: {
+      cook_name: {
         type: Sequelize.STRING
-      },
-      eaten: {
-        type: Sequelize.BOOLEAN,
-        allowNull:false,
-        defaultValue: false
       },
       createdAt: {
         allowNull: false,
@@ -27,6 +22,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Food');
+    return queryInterface.dropTable('Cooks');
   }
 };
