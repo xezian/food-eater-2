@@ -3,11 +3,18 @@ const express = require("express");
 const router = express.Router();
 // get route for getting all foods
 router.get("/", (req, res) => {
+    let foodsAndCooks = {
+        foods: [],
+        cooks: []
+    }
     foodEater.Food.findAll({}).then(function(foods){
-        const allFoods = {
-            foods: foods,
-        }
-        res.render("index", allFoods)
+        foodEater.Cook.findAll({}).then(function(cooks){
+            foodsAndCooks = {
+                foods: foods,
+                cooks: cooks,
+            }
+            res.render("index", foodsAndCooks);
+        })
     })
 });
 // post route for adding new cook

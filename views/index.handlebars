@@ -59,6 +59,11 @@
             <div class="row">
                 <input type="text" class="new-food-field" id="new-food">
             </div>
+            <select class="row text-center" id="cookSelector">
+                {{#each cooks}}
+                    <option data-id="{{this.id}}">{{this.cook_name}}</option>
+                {{/each}}    
+            </select>
         </div>
         <div class="row text-center">
             <button type="button" class="btn btn-lg new-food-button" id="submit">
