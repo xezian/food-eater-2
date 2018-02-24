@@ -1,6 +1,6 @@
 # FOOD EATER 2
 ## The SQL to [food-eater](https://github.com/xezian/food-eater) (food-eater sequelized)
-Click [here](...) (soon) for the deployed version (thanks [Heroku](https://www.heroku.com/home))
+Click [here](https://vast-dawn-52952.herokuapp.com/) for the deployed version (thanks [Heroku](https://www.heroku.com/home))
 #### I'm happy you made it here
 ### WHAT IS IT?
 * FOOD EATER 2 is a full stack web application (details below) that allows it's users to either submit a new food, or eat any food that nobody has already eaten.
