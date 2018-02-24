@@ -11,6 +11,7 @@
                             {{#unless eaten}}
                                 <button type="button" class="btn eat" id="{{this.id}}">
                                 <p>Food: {{this.food_name}}</p>
+                                <p>Cook: {{this.cook_name}}</p>
                                     <h4>
                                         <span class="glyphicon glyphicon-ice-lolly"></span> ---> Eat it! ---> 
                                         <span class="glyphicon glyphicon-ice-lolly-tasted"></span>
@@ -27,8 +28,9 @@
                     <ul>
                         {{#each foods}}
                             {{#if eaten}}
-                                <button type="button" class="btn eaten" data-id="{{this.id}}">
+                                <button type="button" class="btn eaten" id="{{this.id}}">
                                     <p>Food: {{this.food_name}}</p>
+                                    <p>Cook: {{this.cook_name}}</p>
                                     <h4>
                                         <span class="glyphicon glyphicon-ice-lolly"></span> <--- Uneat it! <--- 
                                         <span class="glyphicon glyphicon-ice-lolly-tasted"></span>
@@ -40,38 +42,45 @@
                 </div>
             </div>
         </div>
-        <div class="row text-center">
-            <label for="new-food" class="column-header">NEW COOK:</label>
-            <div class="row">
-                <input type="text" class="new-food-field" id="new-cook">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row text-center">
+                    <label for="new-food" class="column-header">NEW COOK:</label>
+                    <div class="row">
+                        <input type="text" class="new-food-field" id="new-cook">
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <button type="button" class="btn btn-lg new-food-button" id="cookname">
+                        <h4>
+                            <span class="glyphicon glyphicon-hand-right"></span> ---> Click to Submit! <--- 
+                            <span class="glyphicon glyphicon-hand-left"></span>
+                        </h4>
+                    </button>
+                </div>
             </div>
-        </div>
-        <div class="row text-center">
-            <button type="button" class="btn btn-lg new-food-button" id="cookname">
-                <h4>
-                    <span class="glyphicon glyphicon-hand-right"></span> ---> Click to Submit! <--- 
-                    <span class="glyphicon glyphicon-hand-left"></span>
-                </h4>
-            </button>
-        </div>
-        <div class="row text-center">
-            <label for="new-food" class="column-header">NEW FOOD:</label>
-            <div class="row">
-                <input type="text" class="new-food-field" id="new-food">
+            <div class="col-md-6">
+                <div class="row text-center">
+                    <label for="new-food" class="column-header">NEW FOOD:</label>
+                    <div class="row">
+                        <input type="text" class="new-food-field" id="new-food">
+                    </div>
+                    <label for="cookSelector" class="whos-cooking">WHO'S COOKING?</label>
+                    <select class="row text-center" id="cookSelector">
+                        {{#each cooks}}
+                            <option cook="{{this.cook_name}}" data-id="{{this.id}}">{{this.cook_name}}</option>
+                        {{/each}}    
+                    </select>
+                </div>
+                <div class="row text-center">
+                    <button type="button" class="btn btn-lg new-food-button" id="submit">
+                        <h4>
+                            <span class="glyphicon glyphicon-hand-right"></span> ---> Click to Submit! <--- 
+                            <span class="glyphicon glyphicon-hand-left"></span>
+                        </h4>
+                    </button>
+                </div>
             </div>
-            <select class="row text-center" id="cookSelector">
-                {{#each cooks}}
-                    <option data-id="{{this.id}}">{{this.cook_name}}</option>
-                {{/each}}    
-            </select>
-        </div>
-        <div class="row text-center">
-            <button type="button" class="btn btn-lg new-food-button" id="submit">
-                <h4>
-                    <span class="glyphicon glyphicon-hand-right"></span> ---> Click to Submit! <--- 
-                    <span class="glyphicon glyphicon-hand-left"></span>
-                </h4>
-            </button>
         </div>
     </div>
 </div>

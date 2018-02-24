@@ -16,12 +16,14 @@ $(document).ready(function(){
     $("#submit").click(function(event) {
         event.preventDefault();
         let cookID = $("#cookSelector").find(":selected").attr("data-id");
+        let cookName = $("#cookSelector").find(":selected").attr("cook");
         console.log(cookID);
         if(!cookID){
             return;
         } else {
             const newFood = {
                 food_name: $("#new-food").val().trim(),
+                cook_name: cookName,
                 CookId: cookID
             };
             $.ajax("/api/foods", {
@@ -34,10 +36,18 @@ $(document).ready(function(){
     });
     $(".eat").click(function(event) {
         event.preventDefault();
-        $.ajax(`/api/foods/${$(this).attr("id")}`, {
+        $.ajax(`/api/eat/${$(this).attr("id")}`, {
             type: "PUT",
         }).then(function() {
             location.reload();
         })
-    })
+    });
+    $(".eaten").click(function(event) {
+        event.preventDefault();
+        $.ajax(`/api/uneat/${$(this).attr("id")}`, {
+            type: "PUT",
+        }).then(function() {
+            location.reload();
+        })
+    });
 });

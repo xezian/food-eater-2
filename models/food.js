@@ -2,6 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   var Food = sequelize.define('Food', {
     food_name: DataTypes.STRING,
+    cook_name: DataTypes.STRING,
     eaten: DataTypes.BOOLEAN,
   }, {});
   Food.associate = function(models) {

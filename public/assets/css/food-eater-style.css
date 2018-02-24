@@ -27,6 +27,11 @@ body {
     font-size: 56px;
     color:#ffb4ff;
 }
+.whos-cooking {
+    font-size: 17px;
+    color:#f7f775;
+    margin-right: 20px;
+}
 .eat {
     margin: 2px;
     color: #630303;
@@ -49,4 +54,8 @@ body {
     color: #052771;
     background-color: #ffb4ff;
     margin-bottom: 20px;
+}
+#cookSelector {
+    background-color: #ecffb4ce;
+    color: #052771;
 }
