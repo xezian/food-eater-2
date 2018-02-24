@@ -1,5 +1,5 @@
 body {
-    background-image: url("/assets/images/Foods.jpg");
+    background-image: url("/assets/images/platesoffood.jpg");
     background-size: 300px;
     background-repeat: repeat;
     background-position: center 
@@ -14,18 +14,19 @@ body {
     margin-top: 10vh;
     width: 88vw;
     height: 80vh;
-    background-image: url("/assets/images/supermarket.jpg");
+    background-image: url("/assets/images/somefoods.jpg");
+    background-size: cover;
     border-radius: 10px;
-    opacity: .7;
+    opacity: .8;
     z-index: -1;
 }
 .food-eater-header {
-    font-size: 13vw;
-    color: #ecffb4;
+    font-size: 11vw;
+    color: #fff942;
 }
 .column-header {
     font-size: 56px;
-    color:#ffb4ff;
+    color:#300830;
 }
 .whos-cooking {
     font-size: 17px;
@@ -35,12 +36,12 @@ body {
 .eat {
     margin: 2px;
     color: #630303;
-    background-color: #c7ffb4
+    background-color: #e19107
 }
 .eaten {
     margin: 2px;
-    color: #ecffb4;
-    background-color: #5f0571;
+    color: #630303;
+    background-color: #eef063;
 }
 .new-food-field {
     width: 290px;
@@ -52,7 +53,13 @@ body {
 .new-food-button {
     margin: 2px;
     color: #052771;
-    background-color: #ffb4ff;
+    background-color: #22a8ba;
+    margin-bottom: 20px;
+}
+.new-cook-button {
+    margin: 2px;
+    color: #052771;
+    background-color: #22ba2a;
     margin-bottom: 20px;
 }
 #cookSelector {

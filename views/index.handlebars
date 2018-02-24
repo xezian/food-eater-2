@@ -1,13 +1,15 @@
 <div class="supermarket"></div>
 <div class="container justify-content-center">
-    <h4 class="text-center food-eater-header">FOOD EATER</h4>
+    <h4 class="text-center food-eater-header">FOOD EATER 2</h4>
     <div class="container">
         <div class="row" id="foods">
             <div class="col-sm-6 text-center">
                 <label for="uneaten" class="column-header">UNEATEN FOOD:</label>
                 <div id="uneaten">
                     <ul>
+                        {{!-- loop through all foods in the render object --}}
                         {{#each foods}}
+                            {{!-- if eaten then ignore --}}
                             {{#unless eaten}}
                                 <button type="button" class="btn eat" id="{{this.id}}">
                                 <p>Food: {{this.food_name}}</p>
@@ -26,7 +28,9 @@
                 <label for="eaten" class="column-header">EATEN FOOD:</label>
                 <div id="eaten">
                     <ul>
+                        {{!-- loop through all the foods again --}}
                         {{#each foods}}
+                            {{!-- this time if eaten good we want only those --}}
                             {{#if eaten}}
                                 <button type="button" class="btn eaten" id="{{this.id}}">
                                     <p>Food: {{this.food_name}}</p>
@@ -51,7 +55,7 @@
                     </div>
                 </div>
                 <div class="row text-center">
-                    <button type="button" class="btn btn-lg new-food-button" id="cookname">
+                    <button type="button" class="btn btn-lg new-cook-button" id="cookname">
                         <h4>
                             <span class="glyphicon glyphicon-hand-right"></span> ---> Click to Submit! <--- 
                             <span class="glyphicon glyphicon-hand-left"></span>
@@ -66,6 +70,7 @@
                         <input type="text" class="new-food-field" id="new-food">
                     </div>
                     <label for="cookSelector" class="whos-cooking">WHO'S COOKING?</label>
+                    {{!-- selector for cook --}}
                     <select class="row text-center" id="cookSelector">
                         {{#each cooks}}
                             <option cook="{{this.cook_name}}" data-id="{{this.id}}">{{this.cook_name}}</option>
