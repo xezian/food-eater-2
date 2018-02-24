@@ -7,12 +7,16 @@ router.get("/", (req, res) => {
         foods: [],
         cooks: []
     }
+    // is there a better way to do this? I needed to pass both models to the render function
     foodEater.Food.findAll({}).then(function(foods){
+        // once we have all the food go get the cooks
         foodEater.Cook.findAll({}).then(function(cooks){
+            // now that we have the cooks make an object of foods and cooks
             foodsAndCooks = {
                 foods: foods,
                 cooks: cooks,
             }
+            // pass the object to express handlebars
             res.render("index", foodsAndCooks);
         })
     })
