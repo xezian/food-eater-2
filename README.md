@@ -1,5 +1,6 @@
 # FOOD EATER 2
-## The SQL to [food-eater](https://github.com/xezian/food-eater) (food-eater sequelized)
+## The SQL to [food-eater](https://github.com/xezian/food-eater) (food-eater sequelized)!
+![FOOD EATER 2](https://media.giphy.com/media/g4ILwNEaDV5jK1xc6O/giphy.gif)
 Click [here](https://vast-dawn-52952.herokuapp.com/) for the deployed version (thanks [Heroku](https://www.heroku.com/home))
 #### I'm happy you made it here
 ### WHAT IS IT?
@@ -13,6 +14,9 @@ Click [here](https://vast-dawn-52952.herokuapp.com/) for the deployed version (t
 * Express server is used with Express Handlebars to deliver the front-end
 * HTML, CSS, and JavaScript are all used on the front end
 ### WHAT'S NEW IN FOOD EATER 2 (as opposed to the [original](https://serene-lowlands-69590.herokuapp.com/) FOOD EATER)
+* Take resposibility for your food creations by adding a cook!
+* Choose from a drop-down list of cooks which one to create food as!
+* Uneat food! Eat it again!
 ### WHERE IS THIS GOING?
 * If this very exciting and useful app left you wanting more, you won't have to wait long. Please look through the rest of my GitHub and see where else my coding journey is taking me.
 * On that note, I appreciate any feedback or communication about the app itself or (even better) my code, including any ideas about how I can improve either.
